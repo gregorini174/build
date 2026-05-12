@@ -1,0 +1,10 @@
+# H96 Max H616 TV Box (board H616-V1C)
+BOARD_NAME="H96 Max H616"
+BOARDFAMILY="sun50iw9"
+BOARD_MAINTAINER=""
+BOOTCONFIG="x96-mate_defconfig"
+KERNEL_TARGET="current"
+KERNEL_TEST_TARGET="current"
+DEFAULT_OVERLAYS="sun50i-h616-x96-mate"
+MODULES_BLACKLIST="sprdwl_ng unisoc_wifi"
+SERIALCON="ttyS0"

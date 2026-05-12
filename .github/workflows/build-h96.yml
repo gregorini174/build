@@ -17,6 +17,7 @@ jobs:
         run: |
           sudo ./compile.sh \
             BOARD=h96-h616 \
+            BRANCH=current \
             RELEASE=trixie \
             BUILD_MINIMAL=yes \
             BUILD_DESKTOP=no \

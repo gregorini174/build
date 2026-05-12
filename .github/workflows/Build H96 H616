@@ -2,13 +2,10 @@ name: Build H96 H616
 
 on:
   workflow_dispatch:
-    inputs:
-      release:
-        description: 'Release'
-        default: 'trixie'
 
 jobs:
   build:
+    name: Build Armbian
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -16,19 +13,18 @@ jobs:
         with:
           fetch-depth: 1
 
-      - name: Build
+      - name: Compile
         run: |
-          ./compile.sh \
+          sudo ./compile.sh \
             BOARD=h96-h616 \
             RELEASE=trixie \
             BUILD_MINIMAL=yes \
             BUILD_DESKTOP=no \
             KERNEL_CONFIGURE=no \
-            COMPRESS_OUTPUTIMAGE=sha,img \
-            USE_GITHUBACTIONS=yes
+            COMPRESS_OUTPUTIMAGE=sha,img
 
-      - name: Upload
+      - name: Upload image
         uses: actions/upload-artifact@v4
         with:
           name: armbian-h96-h616
-          path: output/images/*.img*
+          path: output/images/

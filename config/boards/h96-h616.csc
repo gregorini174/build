@@ -2,7 +2,7 @@
 BOARD_NAME="H96 Max H616"
 BOARDFAMILY="sun50iw9"
 BOARD_MAINTAINER=""
-BOOTCONFIG="x96-mate_defconfig"
+BOOTCONFIG="orangepi_zero2_defconfig"
 KERNEL_TARGET="current"
 KERNEL_TEST_TARGET="current"
 DEFAULT_OVERLAYS="sun50i-h616-x96-mate"
